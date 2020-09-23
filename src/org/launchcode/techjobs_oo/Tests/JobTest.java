@@ -11,25 +11,27 @@ public class JobTest {
     Job tJob1;
     Job tJob2;
     Job tJob3;
-//    Job tJob4;
-//    Job tJob5;
+    Job tJob4;
+    Job tJob5;
 
     @Before
-        public void tJobObject() {
+    public void tJobObject() {
         tJob1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         tJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         tJob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        tJob4 = new Job("Mr. Sleepy", new Employer("Sandman"), new Location("Dreamland"), new PositionType("Dreamer"), new CoreCompetency("ZZZ"));
+        tJob5 = new Job();
     }
 
     @Test
-        public void testSettingJobId() {
+    public void testSettingJobId() {
         assertEquals(tJob1.getId(), (tJob2.getId() - 1));
         assertNotEquals(tJob1, tJob2);
 
     }
 
     @Test
-        public void testJobConstructorSetsAllFields() {
+    public void testJobConstructorSetsAllFields() {
         assertEquals("tJob3 name should be Product tester", "Product tester", tJob3.getName());
         assertEquals("tJob3 employer should be ACME", "ACME", tJob3.getEmployer().getValue());
         assertEquals("tJob3 location should be Desert", "Desert", tJob3.getLocation().getValue());
@@ -38,7 +40,16 @@ public class JobTest {
     }
 
     @Test
-        public  void testJobsForEquality(){
+    public void testJobsForEquality() {
         assertNotEquals(tJob2, tJob3);
+    }
+
+    @Test
+    public void testToString() {
+        int lastChar = (tJob4.toString().length() - 1);
+
+        assertEquals('\n', tJob4.toString().charAt(0)); // checks break line before
+        assertEquals('\n', tJob4.toString().charAt(lastChar)); // checks break line after
+
     }
 }
