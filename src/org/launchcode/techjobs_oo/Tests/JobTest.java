@@ -37,5 +37,8 @@ public class JobTest {
         assertEquals("tJob3 competency should be Persistence", "Persistence", tJob3.getCoreCompetency().getValue());
     }
 
-
+    @Test
+        public  void testJobsForEquality(){
+        assertNotEquals(tJob2, tJob3);
+    }
 }
