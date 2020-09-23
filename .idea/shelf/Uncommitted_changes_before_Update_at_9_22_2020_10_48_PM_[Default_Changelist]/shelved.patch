@@ -1,0 +1,17 @@
+Index: src/org/launchcode/techjobs_oo/Location.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.launchcode.techjobs_oo;\r\n\r\nimport java.util.Objects;\r\n\r\n    public class Location extends JobField {\r\n\r\n        public Location(String value) {\r\n            super(value);\r\n        }\r\n    }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/org/launchcode/techjobs_oo/Location.java	(revision 6dc8446a498e90f8646e65569fa018d74e1f28e2)
++++ src/org/launchcode/techjobs_oo/Location.java	(date 1600832510287)
+@@ -1,7 +1,5 @@
+ package org.launchcode.techjobs_oo;
+ 
+-import java.util.Objects;
+-
+     public class Location extends JobField {
+ 
+         public Location(String value) {
